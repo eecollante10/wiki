@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+Edgard Colllante
+Licenciado bajo el esquema Academic Free License version 2.1 
+
+http://hojadevidamia.azurewebsites.net
+Wiki command line client
+Autor: Edgard Collante - Jul-2017
+-->
+<project name="Wiki" default="build" basedir="./">
+
+	<!--
+	*******************************************************
+		Generales
+	*******************************************************
+	-->
+
+	<!-- Classpath para compilación -->
+		<path id="classpath">
+			<fileset dir="./lib">
+				<include name="*.jar" />
+			</fileset>
+		</path>
+	
+
+	<!-- Inicialización de las Propiedades -->
+	<target name="init" description="Inicializa las propiedades">
+		<!-- Definición de Propiedades -->
+		<property name="source" value="./src" />
+		<property name="classes" value="./classes" />
+		<property name="data" value="./data" />
+		<property name="jar" value="wiki.jar" />
+		<property name="dist" value="./dist" />
+		<property name="lib" value="./lib" />
+		<property name="javadoc" value="./docs/api" />
+		<property name="doc" value="javadoc" />
+		<!-- Borra y crea los directorios nuevamente -->
+		<delete dir="${classes}" />
+		<mkdir dir="${classes}" />
+		<delete dir="${dist}" />
+		<mkdir dir="${dist}" />
+		<!--delete dir="${javadoc}" /-->
+		<!--mkdir dir="${javadoc}" /-->
+	</target>
+
+	<!--
+	*******************************************************
+		Ejercicio
+	*******************************************************
+	-->
+
+	<!-- Compilación -->
+	<target name="compile" description="Compilación" depends="init">
+		<!-- Compila -->
+		<javac destdir="${classes}" classpathref="classpath" debug="on" deprecation="on" optimize="on" srcdir="${source}"/>
+	</target>
+
+	<!-- Creación de JAR -->
+	<target name="build" depends="compile" description="Crea el JAR de la aplicación">
+		<!-- Empaqueta las clases en un JAR -->
+		<jar jarfile="${dist}/${jar}" basedir="${classes}">
+			<!--Variables del manifest-->
+			<manifest>
+        <attribute name="Class-Path" value="${lib}/json-20170516.jar"/>
+		      <attribute name="Main-Class" value="anarquianegra.wiki.Wiki" />
+			</manifest>
+		</jar>
+		<!-- Copia las librerias en dist -->
+		<copy file="${lib}/json-20170516.jar" todir="${dist}/${lib}" />
+		<!-- Copia la carpeta data a dist -->
+		<!--copy todir="${dist}/${data}"-->
+			<!--fileset dir="${data}" /-->
+		<!--/copy-->
+	</target>
+	
+
+	<!-- Generación del javadoc -->
+	<target name="javaDoc" depends="init" description="Genera el java doc de la aplicación" >
+		<javadoc destdir="${javadoc}" executable ="${doc}">
+			<fileset dir="${source}" />
+		</javadoc>
+	</target>
+
+</project>
