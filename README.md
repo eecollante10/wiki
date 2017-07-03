@@ -19,7 +19,7 @@ W::::::W                           W::::::W       k::::::k
             WWW             WWW           iiiiiiiikkkkkkkk    kkkkkkkiiiiiiii
 
 # Wiki
-
+![gif](./demo.gif)
 ## Usage :
 - wiki search
 - wiki -l en -r 20 search
