@@ -18,10 +18,10 @@ W::::::W                           W::::::W       k::::::k
             WWW             WWW           iiiiiiiikkkkkkkk    kkkkkkkiiiiiiii
 
 ## Usage :
-- wiki search
-- wiki -l en -r 20 search
-- -l : language
-- -r : limit results
+- `wiki search`
+- `wiki -l en -r 20 search`
+- `-l` : language
+- `-r` : limit results
 
 ## Build :
 - Need to have ant installed
@@ -30,8 +30,8 @@ W::::::W                           W::::::W       k::::::k
 - wiki.jar is output to dist/ directory
 
 ## Install : 
-- Unix : run sh install.sh - creates wiki script at / usr/local/bin
-- Not Unix : move to dist/ directory - run : java -jar wiki.jar [args] 
+- Unix : run `sh install.sh` - creates wiki script at / usr/local/bin
+- Not Unix : move to dist/ directory - run : `java -jar wiki.jar [args]` 
                                                                              
                                                                              
                                                                              
