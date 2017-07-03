@@ -1,6 +1,5 @@
-
-                                                                             
-                                                                             
+# Wiki
+![gif](./demo.gif)                                                                                                                                
 WWWWWWWW                           WWWWWWWW iiii  kkkkkkkk             iiii  
 W::::::W                           W::::::Wi::::i k::::::k            i::::i 
 W::::::W                           W::::::W iiii  k::::::k             iiii  
@@ -18,8 +17,6 @@ W::::::W                           W::::::W       k::::::k
            W:::W           W:::W          i::::::ik::::::k   k:::::k i::::::i
             WWW             WWW           iiiiiiiikkkkkkkk    kkkkkkkiiiiiiii
 
-# Wiki
-![gif](./demo.gif)
 ## Usage :
 - wiki search
 - wiki -l en -r 20 search
