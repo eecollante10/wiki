@@ -87,9 +87,10 @@ class Wiki{
         JSONArray items = result.getJSONArray("search");
         for(int i = 0; i<items.length(); i++){
             JSONObject item = items.getJSONObject(i);
-            String label = item.getString("label");
+            String label = "";
             String description = "";
             try{
+                label = item.getString("label");
                 description =  item.getString("description");
             }
             catch(JSONException e){
